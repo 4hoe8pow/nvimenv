@@ -8,3 +8,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*/node_mod
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md", "*.json" },
   command = "setlocal conceallevel=0" })
 
+vim.cmd[[
+autocmd TermOpen * startinsert
+]]
