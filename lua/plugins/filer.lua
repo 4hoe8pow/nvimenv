@@ -1,15 +1,13 @@
 return {
-  'lambdalisue/fern.vim',
-  keys = {
-    { "<C-n>", ":Fern . -reveal=% -drawer -toggle -width=40<CR>", desc = "toggle fern" },
-  },
-  dependencies = {
-    { 'lambdalisue/nerdfont.vim', },
-    {
-      'lambdalisue/fern-renderer-nerdfont.vim',
-      config = function()
-        vim.g['fern#renderer'] = "nerdfont"
-      end
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
     },
-  },
+    keys = {
+      { '<M-w>', ':NvimTreeToggle<CR>' },
+      { '<C-j>w', ':NvimTreeFindFile<CR>' }
+    },
+    config = function()
+      require("nvim-tree").setup()
+    end
 }
